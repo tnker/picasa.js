@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title>TEST PAGE</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+		<script src="picasa.js"></script>
+		<script type="text/javascript">
+			var sample1 = new Picasa(),
+				sample2 = new Picasa();
+			sample1.init("tnker0217","DP2s");
+			sample1.target="#area1";
+			sample1.get();
+			sample2.init("shiraibility","Okinawa");
+			sample2.blockDOM = "<div><img src='[[link]]' width='400'></div>";
+			sample2.get(function(data){$("#area2").append(data);});
+		</script>
+	</head>
+	<body>
+		<pre>
+		&lt;script type="text/javascript"&gt;
+			var sample1 = new Picasa();
+			var sample2 = new Picasa();
+			//デフォルト出力
+			sample1.init("Googleアカウント名","アルバム名");
+			sample1.target="#area1";
+			sample1.get();
+			//カスタマイズ出力DOM
+			sample2.init("Googleアカウント名","アルバム名");
+			sample2.blockDOM = "&lt;div&gt;&lt;img src='[[link]]' width='400'&gt;&lt;/div&gt;";
+			sample2.get(function(data){$("#area2").append(data);});
+		&lt;/script&gt;
+		</pre>
+		<div id="area1" style="margin-bottom:15px; padding-bottom:15px; border-bottom:3px solid #CCC;"></div>
+		<div id="area2"></div>
+	</body>
+</html>
