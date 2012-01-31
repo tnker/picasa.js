@@ -255,4 +255,3 @@ Picasa.prototype.clone = function(o)
 }
 
 
-
